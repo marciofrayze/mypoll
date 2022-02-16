@@ -7,6 +7,7 @@ from .models import Choice, Question
 
 
 class IndexView(generic.ListView):
+    # The default template name for a ListView is <model name>_list.html. Let's override it.
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
 
@@ -17,6 +18,8 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Question
+    # The default name for this DetailView template is "<model_name>_detail.html".
+    # But I want to use 2 distinct templates, that's why we have a template name here and in the ResultsView bellow.
     template_name = 'polls/detail.html'
 
 
