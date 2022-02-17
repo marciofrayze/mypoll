@@ -28,6 +28,12 @@ class DetailView(generic.DetailView):
     # But I want to use 2 distinct templates, that's why we have a template name here and in the ResultsView bellow.
     template_name = 'polls/detail.html'
 
+    def get_queryset(self):
+        """
+        Excludes any questions that aren't published yet.
+        """
+        return Question.objects.filter(pub_date__lte=timezone.now())
+
 
 class ResultsView(generic.DetailView):
     model = Question
