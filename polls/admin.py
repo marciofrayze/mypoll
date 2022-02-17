@@ -9,9 +9,11 @@ class ChoiceInline(admin.TabularInline):
 
 
 class QuestionAdmin(admin.ModelAdmin):
-    """
-    Giving each fields a title and ordering it. Also, add the Choices by default.
-    """
+
+    # By default, it displays only a str(). Let's make it a little better by defining a list_display.
+    list_display = ('question_text', 'pub_date', 'was_published_recently')
+
+    # Giving each fields a title and ordering it. Also, add the Choices by default.
     fieldsets = [
         (None, {'fields': ['question_text']}),
         ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
