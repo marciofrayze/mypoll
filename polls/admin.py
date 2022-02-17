@@ -23,5 +23,8 @@ class QuestionAdmin(admin.ModelAdmin):
     # Adding filtering by pub_date on Admin page.
     list_filter = ['pub_date']
 
+    # Adding search by question_text on Admin page.
+    search_fields = ['question_text']
+
 
 admin.site.register(Question, QuestionAdmin)
