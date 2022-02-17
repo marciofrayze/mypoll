@@ -20,3 +20,8 @@ urlpatterns = [
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
 ]
+
+# Admin Site Config. TODO: I'm not sure if  there is a better place to do this.
+admin.sites.AdminSite.site_header = 'My Poll Admin Page'
+admin.sites.AdminSite.site_title = 'My Poll'
+admin.sites.AdminSite.index_title = 'My Poll'
