@@ -20,5 +20,8 @@ class QuestionAdmin(admin.ModelAdmin):
     ]
     inlines = [ChoiceInline]
 
+    # Adding filtering by pub_date on Admin page.
+    list_filter = ['pub_date']
+
 
 admin.site.register(Question, QuestionAdmin)
