@@ -2,6 +2,12 @@
 
 Just a very simple Django App I created while following the [Django tutorial page](https://docs.djangoproject.com/en/4.0/intro/tutorial01).
 
+See it live at: 
+- https://marciofrayze-mypoll.herokuapp.com/polls
+- https://marciofrayze-mypoll.herokuapp.com/admin
+
+This project is configured to be deployed at Heroku.
+
 ## How to run it locally
 
 You need Python 3.10.x.
